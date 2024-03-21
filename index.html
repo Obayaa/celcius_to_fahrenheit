@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celcius to Fahrenheit calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Farhenheit and Celcius Conversion Calculator</h1>
+    <div class="content">
+        <div class="celcius">
+            <label for="celcius" class="celcius-label">Celcius</label>
+            <input type="text" name="" id="celcius" oninput="CelciusToFahrenheit()">
+        </div>
+        <div class="fahrenheit">
+            <label for="fahrenheit" class="fahrenheit-label">Fahrenheit</label>
+            <input type="text" name="" id="fahrenheit" oninput="FahrenheitToCelcius()">
+        </div>
+    </div>
+    <button class="conversion-btn" onclick="Conversion()">Convert</button>
+    <script>
+        let celcius = document.getElementById("celcius")
+        let fahrenheit = document.getElementById("fahrenheit")
+
+        function CelciusToFahrenheit(){
+            let output = parseFloat((celcius.value * 9/5) + 32)
+            fahrenheit.value = parseFloat(output)
+        }
+
+        function FahrenheitToCelcius(){
+            let output = parseFloat((fahrenheit.value - 32) * 5/9)
+            celcius.value = parseFloat(output)
+        }
+
+        // function Conversion(){
+        //     let output = parseFloat((celcius * 9/5) + 32)
+        //     fahrenheit.value = parseFloat(output)
+
+        //     let display = parseFloat((fahrenheit - 32) * 5/9)
+        //     celcius.value = parseFloat(display)
+        // }
+    </script>
+
+</body>
+</html>
